@@ -191,7 +191,7 @@ Within your bot constructor, add definitions for your two step waterfall and the
     // This array defines how the Waterfall will execute.
     var waterfallSteps = new WaterfallStep[]
     {
-        NameStepAsync,
+        Name"StepAsync,
         SayHiAsync,
     };
 
@@ -291,7 +291,7 @@ Now, our methods include a third step to ask where our user works.
     {
         await stepContext.Context.SendActivityAsync($"Hi {stepContext.Result}!");
 
-        return await stepContext.PromptAsync("name", new PromptOptions { Prompt = MessageFactory.Text("Where do you work?") }, cancellationToken);
+        return await stepContext.PromptAsync("workplace", new PromptOptions { Prompt = MessageFactory.Text("Where do you work?") }, cancellationToken);
     }
 
     private static async Task<DialogTurnResult> SayHiAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
